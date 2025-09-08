@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Muebles a Medida Moncada – Emilio Moncada</title>
+<meta name="description" content="Emilio Moncada: más de 10 años fabricando muebles de melamina a medida en Cipolletti y el Alto Valle. Placards, cocinas, mesas, estantes y mobiliario comercial." />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--primary:#8b5a2b;--secondary:#d7b98c;--accent:#a86d32;--light:#f8f4e9;--dark:#4e3629}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Tahoma,Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{line-height:1.65;color:var(--dark);background:var(--light)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+/* Header */
+header{position:sticky;top:0;z-index:1000;background:var(--dark);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.logo{display:flex;align-items:center;gap:12px;color:var(--secondary);font-weight:700;font-size:22px}
+.logo img{height:48px;width:auto;object-fit:contain;display:block;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+.nav-links{display:flex;list-style:none}
+.nav-links li{margin-left:24px}
+.nav-links a{color:#fff;text-decoration:none;font-weight:600}
+.nav-links a:hover{color:var(--secondary)}
+.burger{display:none;background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer}
+@media (max-width:820px){
+  .burger{display:block}
+  .nav-links{position:fixed;inset:60px 0 auto 0;background:var(--dark);display:none;flex-direction:column;gap:14px;padding:16px}
+  .nav-links.show{display:flex}
+}
+/* Hero */
+.hero{padding:96px 0;text-align:center;color:#fff;background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat}
+.hero h1{font-size:3rem;margin-bottom:10px;text-shadow:0 2px 6px rgba(0,0,0,.5)}
+.hero p{max-width:850px;margin:0 auto 28px;font-size:1.15rem}
+.btn{display:inline-block;background:var(--secondary);color:var(--dark);padding:12px 26px;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 4px 8px rgba(0,0,0,.12)}
+.btn:hover{background:#e3cda6;transform:translateY(-2px)}
+/* Sections */
+section{scroll-margin-top:88px}
+.section-title{margin:52px 0 28px;text-align:center;font-size:2rem}
+.section-title:after{content:"";display:block;width:84px;height:4px;background:var(--accent);margin:12px auto 0;border-radius:3px}
+/* About */
+.about .wrap{display:flex;gap:36px;align-items:center}
+.about .txt{flex:1}
+.about .img{flex:1;border-radius:14px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.12)}
+.about .img img{width:100%;display:block}
+@media (max-width:900px){.about .wrap{flex-direction:column}}
+/* Feature badges */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:10px}
+.feature{background:#fff;border-top:4px solid var(--accent);border-radius:12px;padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.08);text-align:center}
+.feature i{font-size:28px;color:var(--primary);margin-bottom:8px}
+/* Services */
+.services{background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.service-card{background:var(--light);padding:22px;border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.08);text-align:center;border-top:4px solid var(--primary)}
+.service-card i{font-size:28px;color:var(--primary);margin-bottom:6px}
+.service-card h3{margin:10px 0 6px}
+/* Gallery */
+.gallery{background:#fff}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card-img{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.08);background:#fefefe}
+.card-img .ph{aspect-ratio:4/3}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform .4s}
+.card-img:hover img{transform:scale(1.07)}
+.card-caption{position:absolute;left:12px;bottom:12px;background:rgba(78,54,41,.85);color:#fff;padding:8px 12px;border-radius:8px;font-size:.95rem}
+/* Testimonios */
+.testimonials{background:var(--light)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.testimonial-card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.t-head{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.t-avatar{width:56px;height:56px;border-radius:50%;overflow:hidden}
+.t-avatar img{width:100%;height:100%;object-fit:cover}
+.stars{color:#ffc107}
+.t-txt{font-style:italic;margin-top:8px}
+/* Blocks / forms */
+.block{max-width:980px;margin:0 auto;background:#fff;border-radius:14px;padding:22px;box-shadow:0 12px 28px rgba(0,0,0,.1)}
+.row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:700px){.row{grid-template-columns:1fr}}
+label{font-weight:700}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font-size:16px;background:#fff}
+textarea{height:130px}
+/* Footer */
+footer{background:var(--dark);color:#fff;margin-top:46px}
+.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;padding:28px 0}
+.social{display:flex;gap:14px}
+.social a{color:#fff;font-size:22px}
+.social a:hover{color:var(--secondary)}
+.copy{border-top:1px solid #4a3a2f;text-align:center;padding:14px 0;color:#ddd}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <!-- LOGO en raíz del repo -->
+        <img id="logoImg" src="logo-moncada.png" alt="Muebles Moncada">
+        <span>Muebles Moncada</span>
+      </div>
+      <button class="burger" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+      <ul id="menu" class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#emilio">Emilio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#subidas">Subí tu trabajo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="https://wa.me/5492991234567" target="_blank" rel="nofollow noopener">WhatsApp</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <h1>Muebles a Medida en Melamina</h1>
+    <p><strong>Emilio Moncada</strong>: más de 10 años creando <strong>placards</strong>, <strong>cocinas</strong>, <strong>mesas</strong>, <strong>estantes</strong> y <strong>muebles comerciales</strong> a medida para el Alto Valle.</p>
+    <a class="btn" href="https://wa.me/5492991234567?text=Hola%20Emilio,%20quiero%20un%20presupuesto" target="_blank" rel="nofollow noopener"><i class="fab fa-whatsapp"></i> Pedir presupuesto por WhatsApp</a>
+  </div>
+</section>
+
+<section class="about" id="emilio">
+  <div class="container">
+    <h2 class="section-title">Sobre Emilio Moncada</h2>
+    <div class="wrap">
+      <div class="txt">
+        <p><strong>Emilio Moncada</strong> cuenta con una trayectoria de <strong>más de 10 años</strong> en diseño, fabricación e instalación de muebles de melamina <strong>100% a medida y a uso personal del cliente</strong>. Cada proyecto se planifica según tu espacio, estilo y funcionalidad.</p>
+        <div class="features">
+          <div class="feature"><i class="fas fa-ruler-combined"></i><h4>Medidas exactas</h4><p>Optimización del espacio con módulos a medida.</p></div>
+          <div class="feature"><i class="fas fa-handshake"></i><h4>Trato directo</h4><p>Del presupuesto a la instalación, seguimiento personalizado.</p></div>
+          <div class="feature"><i class="fas fa-screwdriver-wrench"></i><h4>Instalación prolija</h4><p>Terminaciones limpias y resistentes.</p></div>
+          <div class="feature"><i class="fas fa-medal"></i><h4>Calidad</h4><p>Materiales y herrajes confiables.</p></div>
+        </div>
+      </div>
+      <div class="img">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1400&auto=format&fit=crop" alt="Taller de muebles en melamina">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <h2 class="section-title">Servicios</h2>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-warehouse"></i><h3>Placards y vestidores</h3><p>Frentes batientes o corredizos, interiores completos.</p></div>
+      <div class="service-card"><i class="fas fa-kitchen-set"></i><h3>Cocinas integrales</h3><p>Bajo mesada, alacenas y módulos especiales.</p></div>
+      <div class="service-card"><i class="fas fa-table"></i><h3>Mesas y mobiliario</h3><p>Comedores, escritorios, muebles TV y bibliotecas.</p></div>
+      <div class="service-card"><i class="fas fa-store"></i><h3>Muebles comerciales</h3><p>Mostradores, estanterías y muebles de oficina.</p></div>
+      <div class="service-card"><i class="fas fa-screwdriver"></i><h3>Reformas y ajustes</h3><p>Mantenimiento, refits y ampliaciones.</p></div>
+      <div class="service-card"><i class="fas fa-palette"></i><h3>Asesoría de diseño</h3><p>Combinaciones de colores y texturas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="container">
+    <h2 class="section-title">Galería</h2>
+    <div id="galleryGrid" class="gallery-grid"></div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <h2 class="section-title">Testimonios</h2>
+    <div id="reviewsGrid" class="testimonial-grid"></div>
+    <div class="block" style="margin-top:16px">
+      <h3 style="margin-bottom:10px">Dejá tu reseña</h3>
+      <form id="reviewForm">
+        <div class="row">
+          <div><label for="rname">Nombre</label><input id="rname" required placeholder="Tu nombre"></div>
+          <div><label for="rloc">Localidad</label><input id="rloc" required placeholder="Cipolletti, Neuquén..."></div>
+        </div>
+        <div class="row" style="margin-top:8px">
+          <div>
+            <label>Calificación</label>
+            <div id="ratingStars" style="font-size:22px;cursor:pointer">
+              <i data-v="1" class="fa-solid fa-star"></i>
+              <i data-v="2" class="fa-solid fa-star"></i>
+              <i data-v="3" class="fa-solid fa-star"></i>
+              <i data-v="4" class="fa-solid fa-star"></i>
+              <i data-v="5" class="fa-solid fa-star"></i>
+            </div>
+            <input type="hidden" id="rrate" value="5">
+          </div>
+          <div><label for="rphoto">Foto (opcional)</label><input id="rphoto" type="file" accept="image/*"></div>
+        </div>
+        <div style="margin-top:8px">
+          <label for="rmsg">Tu experiencia con Emilio Moncada</label>
+          <textarea id="rmsg" required placeholder="Ej.: Emilio es un gran trabajador, me hizo la cocina/placard..."></textarea>
+        </div>
+        <button class="btn" style="margin-top:12px">Publicar reseña</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="subidas">
+  <div class="container">
+    <h2 class="section-title">Subí tu trabajo</h2>
+    <div class="block">
+      <form id="workForm">
+        <div class="row">
+          <div><label for="wtitle">Título</label><input id="wtitle" required placeholder="Ej.: Placard dormitorio"></div>
+          <div><label for="wcat">Categoría</label>
+            <select id="wcat" required>
+              <option value="">Elegí</option>
+              <option>Placard</option><option>Cocina</option><option>Mesa</option>
+              <option>Estantes</option><option>Mueble TV</option><option>Comercial</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top:8px">
+          <div><label for="wdesc">Descripción</label><textarea id="wdesc" required placeholder="Medidas, color, detalles..."></textarea></div>
+          <div><label for="wphoto">Foto</label><input id="wphoto" type="file" accept="image/*" required></div>
+        </div>
+        <button class="btn" style="margin-top:12px">Guardar en galería</button>
+        <p style="margin-top:8px;font-size:.9rem">Las fotos se guardan en este dispositivo (localStorage).</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="contacto">
+  <div class="container">
+    <h2 class="section-title">Contacto</h2>
+    <div class="block" style="text-align:center">
+      <p>¿Tenés un proyecto en mente? Escribime y armamos tu presupuesto.</p>
+      <p style="margin:10px 0 18px"><strong>WhatsApp:</strong> <a href="https://wa.me/5492991234567" target="_blank" rel="nofollow noopener">+54 9 299 123-4567</a></p>
+      <a class="btn" href="https://wa.me/5492991234567?text=Hola%20Emilio,%20quiero%20consultar%20sobre%20muebles%20a%20medida" target="_blank" rel="nofollow noopener"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <div><h3>Emilio Moncada</h3><p>Muebles de melamina a medida para Cipolletti y el Alto Valle.</p></div>
+    <div><h3>Redes</h3><div class="social">
+      <a href="https://facebook.com" target="_blank" rel="nofollow noopener"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="nofollow noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5492991234567" target="_blank" rel="nofollow noopener"><i class="fab fa-whatsapp"></i></a>
+    </div></div>
+    <div><h3>Zona</h3><p>Cipolletti · Neuquén · General Roca · Villa Regina · Cinco Saltos · Allen</p></div>
+  </div>
+  <div class="copy">&copy; 2025 Muebles Moncada – Todos los derechos reservados</div>
+</footer>
+
+<script>
+/* NAV */
+const burger=document.querySelector('.burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>menu.classList.toggle('show'));
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('show')));
+/* Logo fallback por si el nombre cambia */
+(function ensureLogo(){
+  const img=document.getElementById('logoImg');
+  const candidates=["logo-moncada.png","logo-moncada.jpg","logo.png","logo.jpg","Logo.png","Logo-Moncada.png"];
+  let i=0;
+  img.onerror=function(){ i++; if(i<candidates.length){ img.src=candidates[i]; } };
+})();
+/* GALERÍA base + usuario */
+const baseWorks=[
+ {title:"Placard moderno",caption:"Puertas corredizas con espejo",img:"https://images.unsplash.com/photo-1598300187395-5a6c1f9e26b0?q=80&w=1200&auto=format&fit=crop"},
+ {title:"Cocina integral",caption:"Línea moderna funcional",img:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop"},
+ {title:"Mesa de comedor",caption:"Roble claro y melamina",img:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop"},
+ {title:"Estantes flotantes",caption:"Modulares y versátiles",img:"https://images.unsplash.com/photo-1555041469-8699fed817cd?q=80&w=1200&auto=format&fit=crop"},
+ {title:"Mueble TV",caption:"Diseño minimalista",img:"https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop"}
+];
+const galleryGrid=document.getElementById('galleryGrid');
+const card=o=>`<figure class="card-img"><div class="ph"><img loading="lazy" src="${o.img}" alt="${o.title}"></div><figcaption class="card-caption"><strong>${o.title}</strong> · ${o.caption||""}</figcaption></figure>`;
+function loadWorks(){const user=JSON.parse(localStorage.getItem('mm_user_works')||"[]");galleryGrid.innerHTML=[...user,...baseWorks].map(card).join("");}
+loadWorks();
+document.getElementById('workForm').addEventListener('submit',e=>{
+  e.preventDefault(); const f=e.target,file=f.wphoto.files[0]; if(!file) return;
+  const r=new FileReader();
+  r.onload=()=>{const entry={title:f.wtitle.value.trim(),caption:`${f.wcat.value} · ${f.wdesc.value.trim()}`,img:r.result};
+    const arr=JSON.parse(localStorage.getItem('mm_user_works')||"[]"); arr.unshift(entry);
+    localStorage.setItem('mm_user_works',JSON.stringify(arr)); loadWorks(); f.reset(); alert("Trabajo guardado en la galería de este dispositivo.");};
+  r.readAsDataURL(file);
+});
+/* TESTIMONIOS */
+const baseReviews=[
+ {name:"María González",loc:"Cipolletti",rate:5,img:"https://randomuser.me/api/portraits/women/65.jpg",txt:"Emilio Moncada me hizo la cocina completa: prolijo, cumplidor y excelente terminación."},
+ {name:"Carlos López",loc:"Neuquén",rate:5,img:"https://randomuser.me/api/portraits/men/32.jpg",txt:"Muy profesional. Emilio armó los muebles de oficina y quedaron perfectos."},
+ {name:"Laura Martínez",loc:"General Roca",rate:5,img:"https://randomuser.me/api/portraits/women/45.jpg",txt:"El placard que diseñó Emilio aprovecha cada centímetro. ¡Impecable!"},
+ {name:"Roberto Silva",loc:"Villa Regina",rate:4,img:"https://randomuser.me/api/portraits/men/58.jpg",txt:"Nos hizo una mesa hermosa y muy sólida. Trato excelente de Emilio Moncada."}
+];
+const reviewsGrid=document.getElementById('reviewsGrid');
+function stars(n){return '<div class="stars" aria-label="'+n+' de 5">'+Array.from({length:5},(_,i)=>i<n?'★':'☆').join('')+'</div>'}
+function reviewCard(r){const a=r.img||'https://i.pravatar.cc/100?u='+encodeURIComponent(r.name);
+  return `<div class="testimonial-card"><div class="t-head"><div class="t-avatar"><img src="${a}" alt="Foto de ${r.name}"></div><div><strong>${r.name}</strong><div style="color:#777;font-size:.9rem">${r.loc||""}</div>${stars(r.rate||5)}</div></div><p class="t-txt">“${r.txt}”</p></div>`;}
+function loadReviews(){const user=JSON.parse(localStorage.getItem('mm_reviews')||"[]");reviewsGrid.innerHTML=[...user.reverse(),...baseReviews].map(reviewCard).join("");}
+loadReviews();
+/* rating + guardar reseña */
+const ratingStars=document.getElementById('ratingStars'),hidden=document.getElementById('rrate');
+ratingStars.addEventListener('click',e=>{const v=Number(e.target.dataset.v); if(!v)return; hidden.value=v;[...ratingStars.children].forEach((i,idx)=>i.className=idx<v?'fa-solid fa-star':'fa-regular fa-star');});
+document.getElementById('reviewForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target,file=document.getElementById('rphoto').files[0];
+  const base={name:f.rname.value.trim(),loc:f.rloc.value.trim(),rate:Number(hidden.value)||5,txt:document.getElementById('rmsg').value.trim()};
+  const save=(img)=>{const arr=JSON.parse(localStorage.getItem('mm_reviews')||"[]");arr.push({...base,img});localStorage.setItem('mm_reviews',JSON.stringify(arr));loadReviews();f.reset();hidden.value=5;[...ratingStars.children].forEach(i=>i.className='fa-solid fa-star');alert("¡Gracias por tu reseña!");};
+  if(file){const r=new FileReader(); r.onload=()=>save(r.result); r.readAsDataURL(file);} else save(null);
+});
+</script>
+</body>
+</html>
