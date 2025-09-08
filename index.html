@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muebles a Medida Moncada – Melamina de Calidad</title>
+  <meta name="description" content="Fabricación e instalación de muebles de melamina a medida en Cipolletti, Neuquén, General Roca y Alto Valle." />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27><text y=%2750%27 x=%275%27 font-size=%2750%27>🛋️</text></svg>">
+  <style>
+    :root{--primary:#8b5a2b;--secondary:#d7b98c;--accent:#a86d32;--light:#f8f4e9;--dark:#4e3629}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif}
+    body{line-height:1.6;color:var(--dark);background:var(--light)}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    /* Header */
+    header{background:var(--dark);color:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+    .logo{font-size:22px;font-weight:700;color:var(--secondary);display:flex;align-items:center;gap:10px}
+    .logo img{height:42px;width:auto;display:block}
+    .nav-links{display:flex;list-style:none}
+    .nav-links li{margin-left:24px}
+    .nav-links a{color:#fff;text-decoration:none;font-weight:500}
+    .nav-links a:hover{color:var(--secondary)}
+    /* Mobile menu */
+    .burger{display:none;font-size:22px;color:#fff;background:transparent;border:0;cursor:pointer}
+    @media (max-width:768px){
+      .nav-links{position:fixed;inset:60px 0 auto 0;background:var(--dark);flex-direction:column;padding:16px;gap:14px;display:none}
+      .nav-links.show{display:flex}
+      .burger{display:block}
+    }
+    /* Hero */
+    .hero{padding:96px 0;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1556020685-ae41abfc9365?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat}
+    .hero h1{font-size:3rem;margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,.45)}
+    .hero p{font-size:1.2rem;max-width:820px;margin:0 auto 28px}
+    .btn{display:inline-block;background:var(--secondary);color:var(--dark);padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:700;border:0;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,.1)}
+    .btn:hover{background:#e0c9a0;transform:translateY(-2px)}
+    /* Sections */
+    section{scroll-margin-top:84px}
+    .about{padding:72px 0;background:#fff}
+    .section-title{text-align:center;margin-bottom:40px;font-size:2rem;color:var(--dark);position:relative}
+    .section-title:after{content:"";display:block;width:72px;height:4px;background:var(--accent);margin:12px auto 0}
+    .about-content{display:flex;align-items:center;gap:36px}
+    .about-text{flex:1}
+    .about-text h3{color:var(--primary);margin-bottom:12px;font-size:1.6rem}
+    .about-image{flex:1;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+    .about-image img{width:100%;display:block}
+    /* Services */
+    .services{padding:72px 0;background:var(--light)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+    .service-card{background:#fff;padding:24px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center;border-top:4px solid var(--primary)}
+    .service-icon{font-size:2.2rem;color:var(--primary)}
+    .service-card h3{margin:14px 0;color:var(--dark);font-size:1.25rem}
+    .price{font-size:1.05rem;color:var(--accent);font-weight:700;margin-top:8px}
+    /* Gallery */
+    .gallery{padding:72px 0;background:#fff}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .gallery-item{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.1);height:240px;cursor:pointer}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .gallery-item:hover img{transform:scale(1.06)}
+    .gallery-overlay{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;padding:14px;opacity:0;transition:opacity .25s}
+    .gallery-item:hover .gallery-overlay{opacity:1}
+    /* Testimonials */
+    .testimonials{padding:72px 0;background:var(--light)}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+    .testimonial-card{background:#fff;padding:24px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.05)}
+    .testimonial-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .testimonial-avatar{width:56px;height:56px;border-radius:50%;overflow:hidden}
+    .testimonial-avatar img{width:100%;height:100%;object-fit:cover}
+    .testimonial-stars{color:#ffc107}
+    .testimonial-text{font-style:italic;margin:10px 0 6px;position:relative;padding-left:18px}
+    .testimonial-text:before{content:"\201C";font-size:2.2rem;color:var(--primary);position:absolute;left:-6px;top:-10px;opacity:.25}
+    .testimonial-author{font-weight:700}
+    .testimonial-location{font-size:.9rem;color:#777}
+    /* Review Form */
+    .review-form{padding:72px 0;background:#fff}
+    .form-container{max-width:800px;margin:0 auto;background:var(--light);padding:28px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+    .form-group{margin-bottom:16px}
+    label{display:block;margin-bottom:6px;font-weight:700}
+    input,textarea,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:16px;background:#fff}
+    textarea{height:140px}
+    .star-rating{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:6px}
+    .star-rating input{display:none}
+    .star-rating label{cursor:pointer;width:28px;height:28px;background:#ccc;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+    .star-rating input:checked ~ label,.star-rating label:hover,.star-rating label:hover ~ label{background:#ffc107}
+    /* Location */
+    .location{padding:72px 0;background:var(--light)}
+    .location-content{display:flex;gap:36px;align-items:center}
+    .location-map{flex:1;height:380px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+    .location-info{flex:1}
+    .location-info h3{color:var(--primary);margin-bottom:10px;font-size:1.6rem}
+    /* Footer */
+    footer{background:var(--dark);color:#fff;padding:52px 0 26px}
+    .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-bottom:30px}
+    .footer-section h3{color:var(--secondary);margin-bottom:12px;font-size:1.15rem}
+    .footer-section p,.footer-section a{color:#ddd;margin-bottom:8px;display:block;text-decoration:none}
+    .social-links{display:flex;gap:12px;margin-top:10px}
+    .social-links a{display:inline-block;width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:50%;text-align:center;line-height:40px}
+    .social-links a:hover{background:var(--accent)}
+    .footer-bottom{text-align:center;padding-top:20px;border-top:1px solid #444}
+    /* Responsive */
+    @media (max-width:900px){.about-content,.location-content{flex-direction:column}}
+  </style>
+  <!-- LocalBusiness SEO -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Muebles Moncada",
+    "image":"./logo.png",
+    "telephone":"+54-299-123-4567",
+    "email":"info@mueblesmoncada.com",
+    "address":{"@type":"PostalAddress","addressLocality":"Cipolletti","addressRegion":"Río Negro","addressCountry":"AR"},
+    "areaServed":["Cipolletti","Neuquén","General Roca","Villa Regina","Cinco Saltos","Allen"],
+    "url":"https://example.com"
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav aria-label="Principal">
+        <div class="logo">
+          <img src="logo.png" alt="Muebles Moncada">
+          <span>Muebles Moncada</span>
+        </div>
+        <button class="burger" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+        <ul id="menu" class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <h1>Muebles a Medida en Melamina</h1>
+      <p>Diseño, calidad y precios accesibles para el Alto Valle de Río Negro</p>
+      <a href="https://wa.me/5492991234567?text=Hola%20Muebles%20Moncada,%20quiero%20un%20presupuesto" class="btn" target="_blank" rel="nofollow noopener">Solicitar Presupuesto por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" aria-labelledby="sobre">
+    <div class="container">
+      <h2 id="sobre" class="section-title">Sobre Nosotros</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Expertos en muebles de melamina a medida</h3>
+          <p>En Muebles Moncada nos especializamos en la fabricación e instalación de muebles de melamina de alta calidad, perfectamente adaptados a tus espacios y necesidades.</p>
+          <p>Trabajamos en toda la región del Alto Valle de Río Negro, incluyendo Cipolletti, Neuquén, General Roca y alrededores. Ofrecemos precios competitivos y soluciones a medida para hogares y negocios.</p>
+          <p>Nuestro compromiso es brindarte muebles funcionales, duraderos y estéticos que se integren armoniosamente en tus espacios.</p>
+        </div>
+        <div class="about-image">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=1400&auto=format&fit=crop" alt="Taller de muebles en melamina trabajando a medida">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="servicios" aria-labelledby="servicios-title">
+    <div class="container">
+      <h2 id="servicios-title" class="section-title">Nuestros Servicios</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon"><i class="fas fa-warehouse" aria-hidden="true"></i></div>
+          <h3>Muebles para Hogar</h3>
+          <p>Cocinas, placards, dormitorios, bibliotecas y más, diseñados a medida.</p>
+          <div class="price">Desde $35.000</div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+          <h3>Muebles para Oficinas</h3>
+          <p>Escritorios, archivadores, estanterías y mobiliario especializado.</p>
+          <div class="price">Desde $28.000</div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
+          <h3>Muebles Comerciales</h3>
+          <p>Mostradores, estanterías, vitrinas y mobiliario para locales.</p>
+          <div class="price">Desde $42.000</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="galeria" aria-labelledby="galeria-title">
+    <div class="container">
+      <h2 id="galeria-title" class="section-title">Nuestros Trabajos</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" tabindex="0" aria-label="Abrir imagen cocina moderna">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1551298370-9d3d53740c72?q=80&w=900&auto=format&fit=crop" alt="Cocina moderna en melamina blanca con madera" />
+          <div class="gallery-overlay"><h3>Cocina moderna</h3><p>Melamina blanca con detalles en madera</p></div>
+        </div>
+        <div class="gallery-item" tabindex="0" aria-label="Abrir imagen oficina minimalista">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=900&auto=format&fit=crop" alt="Oficina minimalista con escritorio y estantes a medida" />
+          <div class="gallery-overlay"><h3>Oficina minimalista</h3><p>Escritorio y estanterías a medida</p></div>
+        </div>
+        <div class="gallery-item" tabindex="0" aria-label="Abrir imagen dormitorio juvenil">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1593085260707-5377ba37f868?q=80&w=900&auto=format&fit=crop" alt="Dormitorio juvenil con cama y placard integrados" />
+          <div class="gallery-overlay"><h3>Dormitorio juvenil</h3><p>Cama, escritorio y placard integrados</p></div>
+        </div>
+        <div class="gallery-item" tabindex="0" aria-label="Abrir imagen biblioteca moderna">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1588046130717-0eb1c9a16a75?q=80&w=900&auto=format&fit=crop" alt="Biblioteca moderna de melamina" />
+          <div class="gallery-overlay"><h3>Biblioteca moderna</h3><p>Diseño contemporáneo</p></div>
+        </div>
+        <div class="gallery-item" tabindex="0" aria-label="Abrir imagen vestidor elegante">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1599619585752-c3f01dd27e2c?q=80&w=900&auto=format&fit=crop" alt="Vestidor elegante en melamina" />
+          <div class="gallery-overlay"><h3>Vestidor elegante</h3><p>Organización optimizada</p></div>
+        </div>
+        <div class="gallery-item" tabindex="0" aria-label="Abrir imagen home office">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=900&auto=format&fit=crop" alt="Home office funcional en melamina" />
+          <div class="gallery-overlay"><h3>Home office</h3><p>Espacio de trabajo funcional</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonios" aria-labelledby="testimonios-title">
+    <div class="container">
+      <h2 id="testimonios-title" class="section-title">Clientes Satisfechos</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><img loading="lazy" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto de María González"></div>
+            <div>
+              <div class="testimonial-stars" aria-label="5 de 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <div class="testimonial-author">María González</div>
+              <div class="testimonial-location">Cipolletti</div>
+            </div>
+          </div>
+          <p class="testimonial-text">Quedé encantada con mi cocina nueva. Trabajo impecable y en plazo.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><img loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de Carlos López"></div>
+            <div>
+              <div class="testimonial-stars" aria-label="4.5 de 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+              <div class="testimonial-author">Carlos López</div>
+              <div class="testimonial-location">Neuquén</div>
+            </div>
+          </div>
+          <p class="testimonial-text">Hicieron todo el mobiliario de mi oficina. Muy profesionales.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><img loading="lazy" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Foto de Laura Martínez"></div>
+            <div>
+              <div class="testimonial-stars" aria-label="5 de 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <div class="testimonial-author">Laura Martínez</div>
+              <div class="testimonial-location">General Roca</div>
+            </div>
+          </div>
+          <p class="testimonial-text">El placard aprovecha cada centímetro. Materiales excelentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review / Contact -->
+  <section class="review-form" id="contacto" aria-labelledby="contacto-title">
+    <div class="container">
+      <h2 id="contacto-title" class="section-title">Pedí tu Presupuesto</h2>
+      <div class="form-container">
+        <form id="leadForm" autocomplete="on">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="phone">WhatsApp</label>
+            <input id="phone" name="phone" type="tel" required placeholder="+54 9 299...">
+          </div>
+          <div class="form-group">
+            <label for="location">Localidad</label>
+            <select id="location" name="location" required>
+              <option value="">Seleccioná tu localidad</option>
+              <option>Cipolletti</option><option>Neuquén</option><option>General Roca</option>
+              <option>Villa Regina</option><option>Cinco Saltos</option><option>Allen</option><option>Otra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Necesidad</label>
+            <textarea id="message" name="message" required placeholder="Ej.: Cocina línea moderna, 3,2 m, melamina roble..."></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar por WhatsApp</button>
+          <p style="margin-top:10px">O escribinos: <a href="mailto:info@mueblesmoncada.com">info@mueblesmoncada.com</a> · <a href="tel:+542991234567">0299 123-4567</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="location" id="ubicacion" aria-labelledby="ubicacion-title">
+    <div class="container">
+      <h2 id="ubicacion-title" class="section-title">Nuestra Zona de Trabajo</h2>
+      <div class="location-content">
+        <div class="location-info">
+          <h3>Alto Valle de Río Negro y Neuquén</h3>
+          <p>Prestamos servicio en:</p>
+          <ul>
+            <li>Cipolletti</li><li>Neuquén</li><li>General Roca</li><li>Villa Regina</li><li>Cinco Saltos</li><li>Allen</li><li>Localidades cercanas</li>
+          </ul>
+          <p>Visitas a domicilio para presupuesto sin cargo. Transporte propio para la instalación.</p>
+        </div>
+        <div class="location-map" aria-label="Mapa de ubicación">
+          <iframe title="Mapa Cipolletti"
+            src="https://www.google.com/maps?q=Cipolletti,%20R%C3%ADo%20Negro&output=embed"
+            width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Muebles Moncada</h3>
+          <p>Fabricación de muebles a medida en melamina para el Alto Valle.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <p><i class="fas fa-phone"></i> <a href="tel:+542991234567">0299 123-4567</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:info@mueblesmoncada.com">info@mueblesmoncada.com</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Cipolletti, Río Negro</p>
+        </div>
+        <div class="footer-section">
+          <h3>Seguinos</h3>
+          <div class="social-links">
+            <a aria-label="Facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a aria-label="Instagram" href="#"><i class="fab fa-instagram"></i></a>
+            <a aria-label="WhatsApp" href="https://wa.me/5492991234567" target="_blank" rel="nofollow noopener"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Muebles Moncada · Todos los derechos reservados</p></div>
+    </div>
+  </footer>
+
+  <script>
+    // Burger menu
+    const burger = document.querySelector('.burger');
+    const menu = document.getElementById('menu');
+    burger?.addEventListener('click', () => {
+      const show = menu.classList.toggle('show');
+      burger.setAttribute('aria-expanded', show ? 'true' : 'false');
+    });
+
+    // Smooth scrolling with sticky offset
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(!id || id==="#") return;
+        e.preventDefault();
+        const el = document.querySelector(id);
+        if(!el) return;
+        const top = el.getBoundingClientRect().top + window.scrollY - 76;
+        window.scrollTo({top,behavior:'smooth'});
+        menu?.classList.remove('show');
+        burger?.setAttribute('aria-expanded','false');
+      });
+    });
+
+    // Simple lightbox (keyboard + click)
+    function openLightbox(src, alt){
+      const overlay=document.createElement('div');
+      overlay.style.cssText="position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;justify-content:center;align-items:center;z-index:2000";
+      overlay.setAttribute('role','dialog'); overlay.setAttribute('aria-modal','true');
+      const img=document.createElement('img');
+      img.src=src; img.alt=alt||"Imagen ampliada";
+      img.style.maxWidth="92%"; img.style.maxHeight="92%"; img.style.objectFit="contain";
+      overlay.appendChild(img);
+      function close(){overlay.remove(); document.removeEventListener('keydown',onKey);}
+      function onKey(ev){ if(ev.key==='Escape'){close();} }
+      overlay.addEventListener('click', close);
+      document.addEventListener('keydown', onKey);
+      document.body.appendChild(overlay);
+    }
+    document.querySelectorAll('.gallery-item').forEach(item=>{
+      item.addEventListener('click',()=>{
+        const img=item.querySelector('img');
+        openLightbox(img.src, img.alt);
+      });
+      item.addEventListener('keydown',(e)=>{
+        if(e.key==='Enter' || e.key===' '){
+          e.preventDefault();
+          const img=item.querySelector('img');
+          openLightbox(img.src, img.alt);
+        }
+      });
+    });
+
+    // Lead form -> WhatsApp
+    const leadForm = document.getElementById('leadForm');
+    leadForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(leadForm));
+      const msg = `Hola Muebles Moncada, soy ${data.name}.%0A`+
+                  `Localidad: ${data.location}.%0A`+
+                  `WhatsApp: ${data.phone}.%0A`+
+                  `Necesito: ${encodeURIComponent(data.message)}.`;
+      const url = `https://wa.me/5492991234567?text=${msg}`;
+      window.open(url, '_blank');
+      leadForm.reset();
+    });
+  </script>
+</body>
+</html>
